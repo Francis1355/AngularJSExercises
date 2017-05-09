@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BookStoreApp">
+<head>
+	<title>Angular BookStore</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/apartados.css">
+
+</head>
+<body ng-controller="StoreController as store">
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top affix navbar-custom" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="index.html">Angular BookStore </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="opinion.html">Tu opinión</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Géneros<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>Romance</li>
+                    <li>Thriler</li>
+                    <li>Classics</li>
+                    <li>Sci-Fi</li>
+                    <li>Mystery</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div><!-- /.navbar-collapse -->
+</nav>
+<header>
+    <div class="container-fluid" id="header-container">
+        <div class="row" style="margin-top: 50px">
+            <div class="col-lg-12">
+                <img src="public/img/angular.png" alt="" class="img-responsive" style="margin: auto; margin-top: 30px">
+                <div class="intro-text">
+                    <h1>BookStore developed for web class</h1>
+                    <hr>
+                    <span>Aquí encontrarás los mejores best sellers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+	<div class="container-fluid">
+		<h1 class="text-muted"><b>Libros</b></h1>
+	</div>
+	<br/>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<span><b>Buscar</b></span>
+				<span>&nbsp&nbsp&nbsp&nbsp</span>
+				<span>Titulo: <input type="text" ng-model="search"></span>
+				<span>&nbsp&nbsp&nbsp&nbsp</span>
+				<span><b>Ordenar</b></span>
+				<select ng-model="val">
+					<option value="'titulo'">titulo</option>
+					<option value="'editorial'">editorial</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<div class="container">
+		<div class="row" ng-repeat="book in store.books | filter:search | orderBy:val" ng-init="books = historys">
+			<!--<div class="col-xs-12 col-sm-12 bg-info">-->
+			<div class="col-xs-12 col-sm-4 col-md-3">
+				<img class="img-responsive" ng-src="{{book.img}}"/>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<a><h3>{{book.titulo}}</h3></a>
+				<br/>
+				<h4><b>{{book.editorial}}</b></h4>
+				<h4>{{book.descripcion}}</h4>
+                <a href="tab{{book.id}}.html" class="btn btn-success">Ir al libro</a>
+			</div>
+			<!--</div>-->
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<br/>
+				<br/>
+				<br/>
+			</div>
+		</div>
+	</div>
+	<footer>
+    <div class="container">
+          <h3>Contáctanos en nuestras Redes Sociales:</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><img src="public/img/facebook.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><img src="public/img/googlemas.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><img src="public/img/youtube.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><img src="public/img/linkedin.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+    </div>
+    
+                      
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/navbar.js"></script>
+
+</body>
+</html>
