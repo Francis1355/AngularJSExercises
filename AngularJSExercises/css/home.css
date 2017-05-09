@@ -1,0 +1,35 @@
+#header-container{
+    background-color: #e0cc74;
+}
+
+header{
+    text-align: center;
+}
+
+.navbar-custom{
+    padding: 15px 5px 15px 15px;
+    font-weight: bold;
+    -webkit-transition: padding 0.5s;
+    -moz-transition: padding 0.5s;
+    -ms-transition: padding 0.5s;
+    -o-transition: padding 0.5s;
+    transition: padding 0.5s;
+}
+
+.navbar-custom-close{
+    padding: 0 5px 0 25px;
+    font-weight: bold;
+    -webkit-transition: padding 0.5s;
+    -moz-transition: padding 0.5s;
+    -ms-transition: padding 0.5s;
+    -o-transition: padding 0.5s;
+    transition: padding 0.5s;
+}
+
+footer{
+    text-align: center;
+    padding: 50px;
+    height:300px;
+    background-color: #610119;
+    color: white;
+}
